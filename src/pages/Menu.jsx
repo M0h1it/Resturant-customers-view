@@ -27,8 +27,8 @@ export default function Menu() {
    ----------------------------*/
   async function fetchMenuData() {
   try {
-    const res = await fetch("https://dummyjson.com/recipes");
-    const data = await res.json();
+    const res = await apiMenu.get("/");
+    const data = res.data;
 
     const mapped = data.recipes.map((r) => ({
       name: r.name,
@@ -45,6 +45,7 @@ export default function Menu() {
     setFilteredItems([]);
   }
 }
+
 
 
   /** Map dummy categories to your 3 categories */

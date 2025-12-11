@@ -2,12 +2,13 @@ import BottomNav from "../components/BottomNav";
 import { FaClipboardList } from "react-icons/fa";
 
 export default function MenuHeader() {
+  const deviceId = localStorage.getItem("DEVICE_TABLE");
   return (
     <>
       <header className="d-flex justify-content-between align-items-center p-3 shadow-sm bg-danger">
         
         {/* Title */}
-        <h4 className="m-0 text-white fw-bold">Menu</h4>
+        <h4 className="m-0 text-white fw-bold">Menu {deviceId && ` - Table ${deviceId}`}</h4>
 
         {/* Bill Icon Button */}
         <button 
